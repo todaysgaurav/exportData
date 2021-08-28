@@ -4,21 +4,18 @@
     <script>
     var submitForm = Array();
   function handleChange(event) {
-    event.preventDefault();
-
-    submitForm[0] = event.target[0].value;
-    submitForm[1] = event.target[1].value;
-    submitForm[2] = event.target[2].value;
-    submitForm[3] = event.target[3].value;
-    submitForm[4] = event.target[4].value;
-    submitForm[5] = event.target[5].value;
-
-    $.ajax({
-      url: 'demo_test.txt',
-      success: function(result) {
-        alert(result);
-      }
-    });
+     submitForm[0] = event[0].value;
+    submitForm[1] = event[1].value;
+    submitForm[2] = event[2].value;
+    submitForm[3] = event[3].value;
+    submitForm[4] = event[4].value;
+    submitForm[5] = event[5].value;
+if( submitForm[4]!= submitForm[5]){
+  alert("Password did't match");
+    return false;
+}
+   alert("Hello Mr/Mrs." + submitForm[0]+ "<br/> Your form submit successfully!");
+    return ture;
   }
     </script>
   </head>
