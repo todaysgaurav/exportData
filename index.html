@@ -54,7 +54,7 @@ if( submitForm[4]!= submitForm[5]){
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script> 
   
- <script id="firebase">
+ <script type="module">
    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
  const firebaseConfig = {
     apiKey: "AIzaSyCtdyuE1c-89jGWldAonieFdQ55Au-nfUg",
@@ -65,7 +65,8 @@ if( submitForm[4]!= submitForm[5]){
     appId: "1:571386665157:web:10148e512b60607e2bf8ac"
   };
   const app = initializeApp(firebaseConfig);
-
+  </script>
+  <script>
    //---------Insert--------//
  var name, lname, emil, phone, pass, confpass;
    function redy(){
