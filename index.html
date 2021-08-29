@@ -55,6 +55,7 @@ if( submitForm[4]!= submitForm[5]){
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script> 
   
  <script id="firebase">
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
  const firebaseConfig = {
     apiKey: "AIzaSyCtdyuE1c-89jGWldAonieFdQ55Au-nfUg",
     authDomain: "myproject-39ad0.firebaseapp.com",
@@ -63,7 +64,7 @@ if( submitForm[4]!= submitForm[5]){
     messagingSenderId: "571386665157",
     appId: "1:571386665157:web:10148e512b60607e2bf8ac"
   };
-  firebase.initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
 
    //---------Insert--------//
  var name, lname, emil, phone, pass, confpass;
