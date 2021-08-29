@@ -46,7 +46,47 @@ if( submitForm[4]!= submitForm[5]){
           Confirm Password: <input type="Password" id="confpass" />
         </span>
         <br /> <br />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="submit" id="insert" />
       </form>
   </body>
+  
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script> 
+  
+ <script id="firebase">
+ const firebaseConfig = {
+    apiKey: "AIzaSyCtdyuE1c-89jGWldAonieFdQ55Au-nfUg",
+    authDomain: "myproject-39ad0.firebaseapp.com",
+    projectId: "myproject-39ad0",
+    storageBucket: "myproject-39ad0.appspot.com",
+    messagingSenderId: "571386665157",
+    appId: "1:571386665157:web:10148e512b60607e2bf8ac"
+  };
+  const app = initializeApp(firebaseConfig);
+});
+   //---------Insert--------//
+ var name, lname, emil, phone, pass, confpass;
+   function redy(){
+   name=document.getElementbyId('fname').value;
+   lname=document.getElementbyId('lname').value;
+   emil=document.getElementbyId('email').value;
+   phone=document.getElementbyId('phone').value;
+   pass=document.getElementbyId('pass').value;
+   confpass=document.getElementbyId('confpass').value;
+   }
+   
+   //-----------------insert process------------//
+   document.getElementbyId('insert').onclick=function(){
+   ready();
+     firebase.database().ref('myproject/'+name).set({
+     Name:name,
+       LastName:lname,
+       Email:document,
+       Phone:phone,
+       Password:pass,
+       ConfirmPass:confpass  
+     });
+   }
+  </script>
 </html>
