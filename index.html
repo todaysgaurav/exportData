@@ -20,7 +20,7 @@ if( submitForm[4]!= submitForm[5]){
     </script>
   </head>
   <body>
-     <form>
+     <form onClick="insert()">
         <span>
           First Name: <input type="text" id="fname" />
         </span>
@@ -79,7 +79,8 @@ if( submitForm[4]!= submitForm[5]){
    }
    
    //-----------------insert process------------//
-   document.getElementbyId('insert').onclick=function(){
+  // document.getElementbyId('insert').onclick=function(){
+    function insert(){
    ready();
      firebase.database().ref('myproject/'+name).set({
      Name:name,
